@@ -7,13 +7,19 @@ const todomodel = new mongoose.Schema(
       
     },
     complete:{
-      type:true,
+      type:Boolean,
       default:false
     },
     createdBy:{
       type: mongoose.Schema.Types.ObjectId,
       ref:"User"
-    }
+    },
+    subTodos:[
+      {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Subtodo"
+      }//Array of sub_todos
+    ]
 
   },{timestamps:true}
   )
